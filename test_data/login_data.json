@@ -1,0 +1,17 @@
+[
+    {
+        "test_case": "Invalid email and password",
+        "email": "invalid_user_101@example.com",
+        "password": "WrongPassword123!"
+    },
+    {
+        "test_case": "Unregistered email",
+        "email": "unknown_user_202@example.com",
+        "password": "WrongPassword456!"
+    },
+    {
+        "test_case": "Another invalid login",
+        "email": "fake_user_303@example.com",
+        "password": "WrongPassword789!"
+    }
+]
