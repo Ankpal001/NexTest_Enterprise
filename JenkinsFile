@@ -36,11 +36,25 @@ pipeline {
 
     post {
         always {
+            script {
+                if (fileExists('allure-results')) {
+                    allure([
+                        includeProperties: false,
+                        jdk: '',
+                        results: [[path: 'allure-results']]
+                    ])
+                } else {
+                    echo 'Allure results directory was not created.'
+                }
+            }
+
             echo 'NexTest_Enterprise pipeline execution finished.'
         }
+
         success {
             echo 'Pipeline completed successfully.'
         }
+
         failure {
             echo 'Pipeline failed. Check the stage logs.'
         }
